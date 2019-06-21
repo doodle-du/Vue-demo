@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-model</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script>
+		window.onload=function(){
+			new Vue({
+				el:"#itany",
+				data:{
+					name:"doodle",
+					age:27,
+					flag:true
+				}
+			});
+		}
+		
+	</script>
+
+</head>
+<body>
+	<div id="itany">
+		用户名：<input type="text" v-model="name"><br>
+		{{name}}<br>
+		{{age}} <br>
+		{{flag}}
+	</div>
+</body>
+</html>

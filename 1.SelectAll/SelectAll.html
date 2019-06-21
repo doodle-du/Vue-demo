@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SelectAll</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script>
+		window.onload=function(){
+			var vm=new Vue({
+				el:"#app",
+				data:{
+					checkData:[]
+				},
+				methods:{
+					selectAll(e){
+						if(e.target.checked){
+							this.checkitems.forEach((el,i)=>{
+								if(this.checkData.indexOf(el.value)=="-1"){
+									this.checkData.push(el.value);
+								}
+							});
+						}else{
+							this.checkData=[];
+						}
+					},
+					watch:{
+						checkData:{
+							handler(){
+								if(this.checkData.length==){}
+							}
+						}
+					}
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<div id="app">
+		<input type="checkbox" v-model="checkData">A<br>
+		<input type="checkbox" v-model="checkData">B<br>
+		<input type="checkbox" v-model="checkData">C<br>
+		<hr>
+		<input type="checkbox" v-on:change="selectAll">全选
+	</div>	
+</body>
+</html>
